@@ -1,0 +1,276 @@
+.app {
+    background-color: #EAF2F8;
+    display: flex;
+    padding: 2em 0em;
+    justify-content: center;
+    height: 100vh;
+    border-bottom: 1px solid rgba(212, 212, 212, 0.281);
+}
+
+
+.sideBar {
+    background-color: #eee;
+    margin: 0;
+    padding: 0;
+    border-right: 1px solid rgba(212, 212, 212, 0.281);
+    
+}
+
+.chatBody{
+     background-color: #F2F3F4;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     max-height: 100vh;
+     
+}
+
+
+/******** Sidebar ********/
+
+.sidebar-heading {
+
+    padding: 10px 15px;
+    margin: 0;
+    height: 60px;
+    background-color: #eee;
+    z-index: 1000;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid rgba(212, 212, 212, 0.281);
+}
+
+.sidebar-heading-name {
+    display: flex;
+    align-items: center;
+}
+.sidebar-heading-name h4 {
+    margin: 0;
+}
+
+.heading-avatar-icon img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.sidebar-heading-logout {
+    display: flex;
+    font-size: 1.5em;
+    align-items: center;
+    padding: 0em !important;
+    color: grey;
+    cursor: pointer;
+}
+
+.searchBox {
+    background-color: #eee;
+    padding: 0;
+    margin: 0.5em 0;
+}
+
+.searchBox input {
+    border: none;
+}
+
+/******** Sidebar container ********/
+
+.sidebar-container-users {
+    height: 100%;
+    max-height: 80vh;
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+/******** SidebarChatItems ********/
+.sidebar-user {
+    padding: 10px 15px;
+    margin: 0;
+    height: 60px;
+    background-color: #eee;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+
+.active_chat {
+    background: #D6DBDF;
+}
+
+.sidebar-user:hover {
+    background-color: #D6DBDF;
+    cursor: pointer;
+}
+
+
+.sidebar-user-avatar img{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+
+.sidebar-user-email {
+    font-size: 0.8em;
+    font-style: italic;
+    color: grey;
+}
+
+.sidebar-user-status {
+    display: flex;
+    font-size: 0.8em;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/******** body ********/
+
+/******** body-heading ********/
+
+.body-heading {
+    padding: 10px 15px;
+    margin: 0;
+    height: 60px;
+    background-color: #eee;
+    border-bottom: 1px solid rgba(212, 212, 212, 0.281);
+}
+
+.body-heading-avatar-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.body-heading-avatar-icon img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.body-heading-online {
+    text-align: right;
+    font-size:25px;
+}
+
+.body-heading-name{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.body-heading-name h5{
+    margin:0
+}
+
+.body-heading-name span {
+    padding-left: 1em;
+    font-size: 0.8em;
+    font-style: italic;
+    color: grey;
+}
+
+/******** body-content ********/
+
+.msg_history {
+    padding: 2em 0;
+    height: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.time_date {
+    color: #747474;
+    display: block;
+    font-size: 12px;
+    margin: 8px 0 0;
+    word-break: keep-all;
+}
+
+
+/******** incoming-messages ********/
+
+.incoming_msg {
+    overflow: hidden;
+    margin: 26px 0 26px;
+}
+
+.received_msg {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    width: auto;
+    word-wrap: break-word;
+    max-width: 80%;
+    width: auto;
+}
+
+.received_msg p {
+    background:#D4E6F1 repeat scroll 0 0;
+    border-radius: 10px 10px 10px 0;
+    color: black;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+
+
+
+
+/******** outgoing-messages ********/
+
+.outgoing_msg {
+    overflow: hidden;
+    margin: 26px 0 26px;
+}
+
+.sent_msg {
+    float: right;
+    max-width: 80%;
+    width: auto;
+    padding: 0 10px 0 0;
+    word-wrap: break-word;
+}
+
+.sent_msg p {
+    background: #D5F5E3  none repeat scroll 0 0;
+    border-radius: 10px 10px 0 10px;
+    font-size: 14px;
+    margin: 0;
+    color: black;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+
+
+/******** body-input ********/
+
+.body-input {
+    background-color: #eee;
+    padding: 0.5em;
+    border-top: 1px solid rgba(212, 212, 212, 0.281);
+    position: relative;
+}
+
+.body-input-emoji {
+    text-align: center;
+    color: grey;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.body-input-send {
+    text-align: center;
+    color: grey;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/******** chat-select ********/
+
+.chat-select {
+    height: 100%;
+    padding: 2em;
+}
+
+.chat-select-message {
+    width: 100%;
+    text-align: center;
+}
