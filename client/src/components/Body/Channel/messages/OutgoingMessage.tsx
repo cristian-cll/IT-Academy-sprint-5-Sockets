@@ -1,7 +1,7 @@
 import React from 'react'
-import { getTime } from '../../../helpers/getTime'
+import { getTime } from '../../../../helpers/getTime'
 
-export const OutgoingMessage = ({ msg }: { msg: any }) => {
+export const ChannelOutgoingMessage = ({ msg }: { msg: any }) => {
   return (
     <div className="outgoing_msg">
       <div className="sent_msg">

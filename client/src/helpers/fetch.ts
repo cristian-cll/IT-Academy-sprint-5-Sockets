@@ -1,6 +1,6 @@
 const baseUrl = process.env.REACT_APP_API_URL;
 
-export const fecthWithoutToken = async( endpoint: any, data: any, method = "GET") => {
+export const fetchWithoutToken = async( endpoint: any, data: any, method = "GET") => {
 
     const url = `${baseUrl}/${endpoint}`
 
@@ -20,7 +20,7 @@ export const fecthWithoutToken = async( endpoint: any, data: any, method = "GET"
     return await res.json();
 }
 
-export const fecthWithToken = async( endpoint: any, data?: any, method = "GET") => {
+export const fetchWithToken = async( endpoint: any, data?: any, method = "GET") => {
 
     const url = `${baseUrl}/${endpoint}`
     const token = localStorage.getItem("token") || "";

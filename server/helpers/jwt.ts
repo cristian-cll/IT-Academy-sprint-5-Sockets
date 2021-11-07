@@ -35,8 +35,6 @@ export const checkToken = ( token: string    ) => {
             process.env.JWT_KEY as string
           ) as UserPayload;
 
-        
-            console.log(payload.uid);
         return [ true, payload.uid ];
 
     } catch (error : any) {

@@ -8,6 +8,7 @@ import { authRouter } from "../routes/auth";
 import { messagesRouter } from "../routes/messages";
 import Sockets from './sockets';
 import { dbConnection } from '../database/config';
+import { channelRouter } from "../routes/channel";
 
 export class Server {
     private readonly app: Application;
@@ -41,6 +42,7 @@ export class Server {
         // API End Points
         this.app.use( '/api/login', authRouter );
         this.app.use( '/api/messages', messagesRouter );
+        this.app.use( '/api/channel', channelRouter );
     }
 
     private setSockets() {

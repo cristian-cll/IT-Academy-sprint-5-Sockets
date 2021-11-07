@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -28,11 +28,6 @@ export const RegisterPage = () => {
         lastName: "",
         avatar: ""
     });
-
-    useEffect(() => {
-        console.log("avatar", avatar);
-    })
-
     
     const onChange = ({target} : {target:any}) => {
         

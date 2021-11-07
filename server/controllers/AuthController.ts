@@ -9,8 +9,6 @@ export const GoogleLogin = async(req: any, res = response) => {
 
     try {
 
-        console.log(process.env.GOOGLE_CLIENT_ID)
-
         const code = req.body.code;
         const profile: any = await getProfileInfo(code);
 
@@ -147,7 +145,6 @@ export const login = async(req: any, res: any) => {
 
 
     } catch (error) {
-        console.log(error);
         res.status(500).json({
             ok: false,
             msg: 'Internal Error'

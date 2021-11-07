@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTime } from '../../../helpers/getTime';
+import { getTime } from '../../../../helpers/getTime';
 
 export const IncomingMessage = ({ msg }: { msg: any }) => {
 

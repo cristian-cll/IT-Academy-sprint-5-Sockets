@@ -1,17 +1,18 @@
 const login = async (code:any) => {
     return fetch('http://localhost:8080/api/login/google', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ code }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      } else {
-        return Promise.reject(res);
-      }
-    });
-  };
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({ code }),
+    })
+		.then((res) => {
+			if (res.ok) {
+				return res.json();
+			} else {
+				return Promise.reject(res);
+			}
+    	});
+};
   
-  export { login };
+export { login };

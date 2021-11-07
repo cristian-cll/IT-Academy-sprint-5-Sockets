@@ -37,6 +37,42 @@ export const SocketProvider = ({ children }: SocketIoProviderProps ) => {
         }
     }, [auth, disconnectSocket]);
 
+
+    useEffect(() => {
+        if(socket === null) return;
+        socket.on(socketEvents.CLIENT.CHANNELS_LIST, (channels) => {
+            dispatch({
+                type: types.channelsList,
+                payload: channels,
+            });
+        });
+    }, [socket, dispatch]);
+
+    useEffect(() => {
+        if(socket === null) return;
+        socket.on(socketEvents.CLIENT.CHANNEL_MESSAGE, ({ message, user }) => {
+            dispatch({
+                type: types.channelMessage,
+                payload: message,
+                user
+            });
+
+            scrollToBottomAnimated("messages");
+        });
+
+    }, [socket, dispatch]);
+
+    useEffect(() => {
+        if(socket === null) return;
+        socket.on(socketEvents.CLIENT.CHANNEL_CREATED, (name) => {
+            dispatch({
+                type: types.channelCreated,
+                payload: name,
+            });
+        });
+
+    }, [socket, dispatch]);
+
     // Listening changes in connected users
     useEffect(() => {
         if(socket === null) return;
@@ -56,7 +92,7 @@ export const SocketProvider = ({ children }: SocketIoProviderProps ) => {
                 payload: message,
             });
 
-        scrollToBottomAnimated("messages");
+            scrollToBottomAnimated("messages");
         });
     }, [socket, dispatch]);
 

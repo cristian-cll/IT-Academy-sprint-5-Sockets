@@ -8,9 +8,7 @@ import { AuthRouter } from "./AuthRouter";
 
 export const AppRouter = () => {
 
-
     const { verifyToken, auth} = useContext(AuthContext)
-    
 
     // Every time the screen is refreshed
     useEffect(() => {

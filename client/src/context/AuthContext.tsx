@@ -1,5 +1,5 @@
 import React, {createContext, useCallback, useContext, useState} from "react"
-import { fecthWithoutToken, fecthWithToken } from "../helpers/fetch";
+import { fetchWithoutToken, fetchWithToken } from "../helpers/fetch";
 import { types } from "./types/types";
 import { ChatContext } from "./chat/ChatContext";
 
@@ -69,7 +69,7 @@ export const AuthProvider: React.FC = ({children})  => {
 
     const login = async (email: any, password: any) => {
 
-        const res = await fecthWithoutToken('login', {email, password}, "POST")
+        const res = await fetchWithoutToken('login', {email, password}, "POST")
 
         if (res.ok) {
             localStorage.setItem("token", res.token)
@@ -93,7 +93,7 @@ export const AuthProvider: React.FC = ({children})  => {
 
     const register = async (firstName: any, lastName:any, email: any, password: any, avatar: any) => {
         
-        const res = await fecthWithoutToken('login/new', {firstName, lastName, email, password, avatar}, "POST");
+        const res = await fetchWithoutToken('login/new', {firstName, lastName, email, password, avatar}, "POST");
 
         if (res.ok) {
             localStorage.setItem("token", res.token)
@@ -137,7 +137,7 @@ export const AuthProvider: React.FC = ({children})  => {
         }
 
         // Renew the token
-        const res = await fecthWithToken('login/renew');
+        const res = await fetchWithToken('login/renew');
 
         if (res.ok) {
             localStorage.setItem("token", res.token)

@@ -12,6 +12,7 @@ export const chatReducer = ( state: any, action:any ) => {
                 activeChat: null,
                 users: [], 
                 messages: [],
+                channels: [...state.channels]
             }
         
         
@@ -46,12 +47,33 @@ export const chatReducer = ( state: any, action:any ) => {
                 return state;
             }
             
-
         case types.loadMessages:
             return {
                 ...state,
                 messages: action.payload
             }
+
+        case types.channelMessage:
+            if ( state.activeChat === action.payload.to ) {
+            return {
+                ...state,
+                messages: [...state.messages, action.payload],
+            };
+            } else {
+                return state;
+            }
+
+        case types.channelCreated:
+            return {
+                ...state,
+                channels: [...state.channels, action.payload],
+            };
+
+        case types.channelsList:
+            return {
+                ...state,
+                channels: [...action.payload],
+            };
             
         default:
             return state;

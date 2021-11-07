@@ -1,10 +1,10 @@
 import React, { useContext, useRef, useState } from 'react';
 
-import { AuthContext } from '../../context/AuthContext';
-import { ChatContext } from '../../context/chat/ChatContext';
-import { SocketContext } from '../../context/SocketContext';
+import { AuthContext } from '../../../context/AuthContext';
+import { ChatContext } from '../../../context/chat/ChatContext';
+import { SocketContext } from '../../../context/SocketContext';
 import { Picker } from 'emoji-mart';
-import { socketEvents } from '../../config/socketEvents';
+import { socketEvents } from '../../../config/socketEvents';
 import 'emoji-mart/css/emoji-mart.css'
 
 
@@ -20,8 +20,6 @@ export const InputMessage = () => {
     const { auth } = useContext( AuthContext );
     const { chatState } = useContext( ChatContext );
 
-    console.log("HOLA", process.env.REACT_APP_HOLA);
-
     const addEmoji = (e: any) => {
         let emoji = e.native;
         setMessage(prevMessage => prevMessage + emoji);
@@ -30,7 +28,6 @@ export const InputMessage = () => {
     const handleAppClick = (e: any) => {
         !showEmoji ? setShowEmoji(true) : setShowEmoji(false); 
     }
-
 
     const onChange = ({ target } : { target: any}) => {
         setMessage( target.value );

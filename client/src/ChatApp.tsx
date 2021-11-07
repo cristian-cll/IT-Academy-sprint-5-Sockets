@@ -5,15 +5,15 @@ import { AppRouter } from "./router/AppRouter";
 import { ChatProvider } from "./context/chat/ChatContext";
 
 function ChatApp() {
-  return (
-    <ChatProvider>
-      <AuthProvider>
-        <SocketProvider>
-          <AppRouter />
-        </SocketProvider>
-      </AuthProvider>
-    </ChatProvider>
-  );
+    return (
+        <ChatProvider>
+            <AuthProvider>
+                <SocketProvider>
+                    <AppRouter />
+                </SocketProvider>
+            </AuthProvider>
+        </ChatProvider>
+    );
 }
 
 export default ChatApp;

@@ -184,6 +184,14 @@
     word-break: keep-all;
 }
 
+.channel_user_from {
+    color: #747474;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    word-break: keep-all;
+}
+
 
 /******** incoming-messages ********/
 

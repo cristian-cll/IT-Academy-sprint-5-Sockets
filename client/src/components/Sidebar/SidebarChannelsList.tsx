@@ -6,7 +6,7 @@ import { scrollToBottom } from '../../helpers/scrollToBottom';
 
 import { types } from '../../context/types/types';
 
-export const SidebarUserList = ({ user } : { user: any }) => {
+export const SidebarChannelsList = ({ channel } : { channel: any }) => {
 
     const { chatState, dispatch } = useContext( ChatContext );
     const { activeChat } = chatState;
@@ -15,11 +15,11 @@ export const SidebarUserList = ({ user } : { user: any }) => {
 
         dispatch({
             type: types.activateChat,
-            payload: user.uid
+            payload: channel.uid
         });
 
-        // Cargar los mensajes del chat
-        const resp = await fetchWithToken(`messages/personal/${ user.uid }`);
+        // Cargar los mensajes del canal
+        const resp = await fetchWithToken(`messages/channel/${ channel.uid }`);
 
         dispatch({
             type: types.loadMessages,
@@ -30,36 +30,27 @@ export const SidebarUserList = ({ user } : { user: any }) => {
     }
 
     return (
-        
-
-        <div 
-				className={`row sidebar-user ${ (user.uid === activeChat) && 'active_chat' }`}
-				onClick={ onClick }
-				title={`Talk with ${user.firstName} ${ user.lastName }!`}
-        >
+        <div
+			className={`row sidebar-user ${ (channel.uid === activeChat) && 'active_chat' }`}
+			onClick={onClick}
+			title={`Join to ${channel.name} ${ channel.type }!`}
+			id="sidebarItem"
+      	>
             <div className="col-sm-2 col-xs-2">
 				<div className="sidebar-user-avatar">
-					<img src={user.avatar} alt="" />
+					<img src="../images/icons/channel.png" alt="" />
 				</div>
             </div>
             <div className="col-sm-9 col-xs-9">
 				<div className="row">
 					<div className="col-sm-8 col-xs-8 sidebar-user-name">
-						<span > { user.firstName } { user.lastName } </span>
+						<span > { channel.name } - Channel </span>
 					</div>
 				</div>
 				<div className="row sidebar-user-email">
-					<span> { user.email } </span>
+						<span> { channel.type } </span>
 				</div>
             </div>
-            <div className="col-sm-1 col-xs-1 sidebar-user-status">
-              {
-                    ( user.online )
-                        ? <i className="fas fa-circle" style={{color : "#58D68D"}} />
-                        : <i className="fas fa-circle" style={{color : "#EC7063"}} />
-              }
-            </div>
         </div>
-        
     )
 }

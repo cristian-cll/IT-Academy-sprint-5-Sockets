@@ -5,7 +5,7 @@ export const ChatSelect = () => {
         <div className="chat-select">
             <div className="chat-select-message">
                 
-                <h3>Select a contact to speak.</h3>
+                <h3>Select a contact/channel to speak.</h3>
                 <span>
                     TODO: Show last conversations
                 </span>
